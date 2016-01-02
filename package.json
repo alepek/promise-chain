@@ -1,0 +1,30 @@
+{
+  "name": "promise-chain",
+  "version": "1.0.0",
+  "description": "A simple extension to the Promises API for ES6",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "lint": "eslint lib/*.js && eslint test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alepek/promise-chain.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alepek/promise-chain/issues"
+  },
+  "homepage": "https://github.com/alepek/promise-chain#readme",
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-google": "^0.3.0",
+    "husky": "^0.10.2",
+    "tape": "^4.2.2"
+  },
+  "engines": {
+    "node": ">=4"
+  }
+}
