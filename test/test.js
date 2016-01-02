@@ -86,3 +86,40 @@ tape('mulitple reject, multiple resolve', function(t) {
       t.end('incorrect rejection');
     });
 });
+
+tape('resolve function', function(t) {
+  Promise.first([resolver])
+    .then(function() {
+      t.end();
+    }, function() {
+      t.end('incorrect rejection');
+    });
+});
+
+tape('reject function', function(t) {
+  Promise.first([resolver])
+    .then(function() {
+      t.end();
+    }, function() {
+      t.end('incorrect rejection');
+    });
+});
+
+tape('mixed functions', function(t) {
+  Promise.first([rejector, rejector, resolver])
+    .then(function() {
+      t.end();
+    }, function() {
+      t.end('incorrect rejection');
+    });
+});
+
+tape('functions and promises', function(t) {
+  Promise.first([rejector(), rejector, resolver('data'), resolver])
+    .then(function(data) {
+      t.equal(data, 'data');
+      t.end();
+    }, function() {
+      t.end('incorrect rejection');
+    });
+});
